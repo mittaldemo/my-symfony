@@ -1,0 +1,64 @@
+{% extends "EmailBoxBundle:Default:email_layout.html.twig" %}
+{% block fos_user_content %}
+<div id="navbar" class="navbar navbar-default ace-save-state">
+   <div class="navbar-container ace-save-state" id="navbar-container">
+      <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+      <span class="sr-only">Toggle sidebar</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-header pull-left">
+         <a href="http://ace.jeka.by/index.html" class="navbar-brand">
+         <small>
+         <i class="fa fa-leaf">Compose</br>
+         {{ app.user.username }}   </i>
+         </small>
+         </a>
+      </div>
+      <div class="navbar-buttons navbar-header pull-right" role="navigation">
+         <a href="{{ logout_path(app.security.token.providerKey) }}" class="navbar-brand">
+         <small>
+         <i class="fa fa-leaf"></i>
+         Logout</br>
+         </small>
+         </a>
+      </div>
+   </div>
+   <!-- /.navbar-container -->
+</div>
+{% endblock fos_user_content %}
+{% block mail_detail %}
+<div class="login-wrap" style="width:80%">
+   <div class="form">
+      <div class="form-group" id="errors">
+      </div>
+      <form action="{{ path('email_send_mail') }}" method="post" id="composeForm" name="myform">
+      <table>
+         <tr>
+            <td><label>From</label></td>
+            
+   <td><input type="text" placeholder="From" name="from" value="{{ app.user.username }}" readonly></td>
+         </tr>
+         <tr>
+            <td> <label>To</label></td>
+            <td><input type="text" placeholder="To" name="to" value="" /></td>
+         </tr>
+         <tr>
+            <td> <label>Subject</label></td>
+            <td><input type="text" placeholder="Subject" name="subject" value="" /></td>
+            <td><span name="subject_name"></span></td>
+         </tr>
+         <tr>
+            <td> <label>Content</label></td>
+            <td><textarea placeholder="Content" name="content" rows="10" cols="20" style="width: 734px; height: 134px;"></textarea></td>
+         </tr>
+         <tr>
+            <td> <input type="submit"  name="submit" value="Send" /></td>
+            <td><input type="submit"  name="submit" value="Save Draft" /></td>
+         </tr>
+      </table>
+      </form>
+   </div>
+</div>
+{% endblock mail_detail %}

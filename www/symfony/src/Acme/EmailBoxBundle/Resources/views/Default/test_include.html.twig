@@ -1,0 +1,28 @@
+
+{% block title %}My cool blog posts{% endblock %}
+
+{% filter upper %}
+{% block body %}
+{% flush %}
+
+    {% set a=20 %}
+   
+   in value block a=  {{ a }}
+{% endblock body %}
+
+{% endfilter %}
+
+	{% block sidebar %}  
+		<a href="">login</a>
+	{% endblock %}
+
+
+{% if fruits is iterable %}
+   {% for fruit in fruits %}
+		{{ fruit }} 
+	{% else %}
+        <li><em>no user found</em></li>
+		  </br>
+	{% endfor %}
+{% endif %}
+

@@ -1,0 +1,72 @@
+<?php
+
+namespace Acme\EmailBoxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Emails
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Emails
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sendFrom", type="string", length=255)
+     */
+    private $sendFrom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sendTo", type="string", length=255)
+     */
+    private $sendTo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subject", type="string", length=255)
+     */
+    private $subject;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="string", length=255)
+     */
+    private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=30)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Reply", mappedBy="emails")
+     */
+    private $replys;
+    
+}

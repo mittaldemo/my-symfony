@@ -1,0 +1,4 @@
+email_test:
+    path: /
+    defaults: {_controller: EmailBoxBundle:Default:demo }
+    
