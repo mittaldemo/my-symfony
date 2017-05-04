@@ -20,6 +20,8 @@ class DefaultController extends Controller
     }
    public function createProductAction()
     {
+
+
         $category = new Category();
         //$category->setName('Computer Peripherals');
 
