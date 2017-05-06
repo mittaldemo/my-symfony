@@ -1,4 +1,4 @@
 <?php
-echo "in master";
+echo "in newdemo";
 print_r(phpinfo());
 ?>
