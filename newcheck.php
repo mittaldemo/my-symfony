@@ -1,6 +1,10 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 echo "master checkout";
+=======
+echo "abc checkout";
+>>>>>>> abc
 =======
 echo "abc checkout";
 >>>>>>> abc
