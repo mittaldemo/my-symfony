@@ -1,5 +1,5 @@
 <?php
-echo "master checkout";
+echo "abc checkout";
 require_once dirname(__FILE__).'/SymfonyRequirements.php';
 
 $lineSize = 70;
